@@ -441,3 +441,20 @@ document.addEventListener('DOMContentLoaded', function() {
         progressBar.style.width = scrolled + '%';
     });
 });
+/* ===== Smooth Typing Name ===== */
+const nameText = "Fuad Hasan";
+const nameElement = document.getElementById("typing-name");
+
+let i = 0;
+
+function typeName() {
+    if (i < nameText.length) {
+        nameElement.textContent += nameText.charAt(i);
+        i++;
+        setTimeout(typeName, 120);
+    } else {
+        nameElement.classList.add("name-show");
+    }
+}
+
+window.addEventListener("load", typeName);
